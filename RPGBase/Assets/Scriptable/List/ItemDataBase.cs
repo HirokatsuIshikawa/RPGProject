@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemDataBase", menuName = "ItemDataBase")]
 public class ItemDataBase : ScriptableObject
 {
-
     static public ItemDataBase instance;
     void Awake()
     {
@@ -14,12 +12,11 @@ public class ItemDataBase : ScriptableObject
             instance = this;
         }
     }
-
-
+    
     [SerializeField]
     private List<ItemData> ItemList = new List<ItemData>();
 
-    public List<ItemData> GetShelterLists()
+    public List<ItemData> GetItemLists()
     {
         return ItemList;
     }
