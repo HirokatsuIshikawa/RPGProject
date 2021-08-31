@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scriptable\ItemData.cs" />
     <Compile Include="Assets\Script\ContentManager.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Script\MapObject.cs" />
     <Compile Include="Assets\Script\CharaAnimeEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystickEditor.cs" />

@@ -50,6 +50,9 @@ public class CharaAnimeEditor : Editor
             data.leftSprite.Add(getSprite(sprites, spriteName, 11));
             data.leftSprite.Add(getSprite(sprites, spriteName, 10));
             data.leftSprite.Add(getSprite(sprites, spriteName, 12));
+            //アセットのセーブ
+            Undo.RecordObject(data, "Set chara sprite");
+            EditorUtility.SetDirty(data);
         }
     }
 
