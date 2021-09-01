@@ -58,23 +58,28 @@
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\JoystickEditor.cs" />
+    <Compile Include="Assets\Script\UI\MessageWindow.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Script\ScriptEditor\PlayerAnimeEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scriptable\List\ItemDataBaseEditor.cs" />
-    <Compile Include="Assets\Script\TouchStateManager.cs" />
-    <Compile Include="Assets\Script\SingletonSample.cs" />
+    <Compile Include="Assets\Script\Plugin\TouchState.cs" />
+    <Compile Include="Assets\Script\CameraControll.cs" />
+    <Compile Include="Assets\Script\Plugin\iTween.cs" />
+    <Compile Include="Assets\Script\System\SingletonSample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystickEditor.cs" />
     <Compile Include="Assets\Scriptable\List\ItemDataBase.cs" />
     <Compile Include="Assets\Scriptable\ItemData.cs" />
-    <Compile Include="Assets\Script\ContentManager.cs" />
+    <Compile Include="Assets\Script\System\ContentManager.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Script\Chara\PlayerAnime.cs" />
     <Compile Include="Assets\Script\MapObject.cs" />
-    <Compile Include="Assets\Script\CharaAnimeEditor.cs" />
+    <Compile Include="Assets\Script\ScriptEditor\CharaAnimeEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystickEditor.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
-    <Compile Include="Assets\Script\CharaAnime.cs" />
+    <Compile Include="Assets\Script\Chara\CharaAnime.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystickEditor.cs" />
     <None Include="Assets\codeandweb.com\Readme.txt" />
     <Reference Include="UnityEngine">
@@ -734,14 +739,14 @@
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>C:/Users/syoug/Desktop/RPGProject/RPGBase/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:/Users/syoug/Desktop/RPGProject/RPGBase/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/syoug/Desktop/RPGProject/RPGBase/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{4551DDFC-AE6B-AADD-E2E5-CA7DB1317547}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

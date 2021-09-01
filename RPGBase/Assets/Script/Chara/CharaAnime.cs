@@ -11,11 +11,10 @@ public class CharaAnime : MonoBehaviour
         right,
         left
     }
-
-    //ジョイスティック
-    public FloatingJoystick joystick;
     //スプライトレンダー
     public SpriteRenderer render;
+
+    public BoxCollider2D colider;
     //物理
     public Rigidbody2D rigidBody;
     //スピード
@@ -30,41 +29,35 @@ public class CharaAnime : MonoBehaviour
     public List<Sprite> leftSprite;
 
     //現在のスプライト
-    private List<Sprite> nowSprite;
+    protected List<Sprite> nowSprite;
     //スプライト番号
-    private int spriteNum;
+    protected int spriteNum;
     //スプライト表示時間
-    private float spriteTime;
+    protected float spriteTime;
     //現在のスプライト番号
-    private int nowSpriteNum;
+    protected int nowSpriteNum;
+    //キャラの向き
+    public DIRECTION charaDirection = DIRECTION.down;
+
+
     //方向
     public Vector2 inputAxis;
-    //キャラの向き
-    private DIRECTION charaDirection = DIRECTION.down;
+    public Vector2 chipSize = new Vector2(0.32f, 0.48f);
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
+    //void Start()
     {
         //初期では下向き
         nowSprite = downSprite;
         charaDirection = DIRECTION.down;
     }
 
-    private void Update()
+    void Update()
     {
-        //キーボードから入力方向を取得
-        inputAxis.x = Input.GetAxis("Horizontal");
-        inputAxis.y = Input.GetAxis("Vertical");
-        //入力してない場合はジョイスティックから取得
-        if (inputAxis.x == 0)
-        {
-            inputAxis.x = joystick.Horizontal;
-        }
-        if (inputAxis.y == 0)
-        {
-            inputAxis.y = joystick.Vertical;
-        }
+
     }
+
 
     // Update is calle
     private void FixedUpdate()
@@ -150,9 +143,24 @@ public class CharaAnime : MonoBehaviour
         {
             render.sprite = nowSprite[spriteNum];
         }
+        Clamp();
     }
 
+    protected void Clamp()
+    {
+        // 画面左下のワールド座標をビューポートから取得
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
+        // 画面右上のワールド座標をビューポートから取得
+        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+        Vector3 pos = transform.position;
+
+        pos.x = Mathf.Clamp(pos.x, min.x + chipSize.x, max.x + chipSize.x);
+        pos.y = Mathf.Clamp(pos.y, min.y + chipSize.y, max.y - chipSize.y);
+        transform.position = pos;
+    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(gameObject.name + " : " + "Collision_" + collision.gameObject.name);
