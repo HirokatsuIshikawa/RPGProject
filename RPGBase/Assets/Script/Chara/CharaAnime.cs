@@ -60,8 +60,21 @@ public class CharaAnime : MonoBehaviour
 
 
     // Update is calle
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
+
+        //イベント中は実行しない
+        if (ContentManager.instance.isEventing())
+        {
+            return;
+        }
+        moveAnime();
+        Clamp();
+    }
+
+
+    public void moveAnime() {
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y * 0.0001f);
         //現在のスプライト番号を取得
         nowSpriteNum = spriteNum;
         //スプライト時間を加算
@@ -143,11 +156,35 @@ public class CharaAnime : MonoBehaviour
         {
             render.sprite = nowSprite[spriteNum];
         }
-        Clamp();
     }
+
+    public void changeDirection()
+    {
+        switch(charaDirection)
+        {
+            case DIRECTION.up:
+                nowSprite = upSprite;
+                break;
+            case DIRECTION.down:
+                nowSprite = downSprite;
+                break;
+            case DIRECTION.right:
+                nowSprite = rightSprite;
+                break;
+            case DIRECTION.left:
+                nowSprite = leftSprite;
+                break;
+
+        }
+
+        render.sprite = nowSprite[0];
+    }
+
+
 
     protected void Clamp()
     {
+        /*
         // 画面左下のワールド座標をビューポートから取得
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
@@ -156,13 +193,15 @@ public class CharaAnime : MonoBehaviour
 
         Vector3 pos = transform.position;
 
-        pos.x = Mathf.Clamp(pos.x, min.x + chipSize.x, max.x + chipSize.x);
+        pos.x = Mathf.Clamp(pos.x, min.x + chipSize.x, max.x - chipSize.x);
         pos.y = Mathf.Clamp(pos.y, min.y + chipSize.y, max.y - chipSize.y);
         transform.position = pos;
+        */
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(gameObject.name + " : " + "Collision_" + collision.gameObject.name);
+        //rigidBody.velocity = Vector2.zero;
     }
 }

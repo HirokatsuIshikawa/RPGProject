@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 /**
@@ -10,6 +11,7 @@ using UnityEngine.EventSystems;
 public class TouchState : MonoBehaviour
 {
     static public TouchState instance;
+    public FloatingJoystick joyStick;
     [SerializeField]
     private bool _touchFlag;      // タッチ有無
     [SerializeField]
@@ -20,6 +22,7 @@ public class TouchState : MonoBehaviour
     public bool touchFlag { get => _touchFlag; }
     public Vector2 touchPosition { get => _touchPosition; }
     public TouchPhase touchPhase { get => _touchPhase; }
+    public float touchTimer = 0.0f;
 
     void Awake()
     {
@@ -28,7 +31,7 @@ public class TouchState : MonoBehaviour
             instance = this;
         }
     }
-    
+
     /**
      * 更新
      *
@@ -41,12 +44,13 @@ public class TouchState : MonoBehaviour
         // エディタ
         if (Application.isEditor)
         {
-            //UI上ではない場合
-            //if (EventSystem.current.IsPointerOverGameObject() == false)
+            //ジョイスティック以外のUI上ではない場合
+            if (EventSystem.current.IsPointerOverGameObject() == false || joyStick.active)
             {
                 // 押した瞬間
                 if (Input.GetMouseButtonDown(0))
                 {
+                    touchTimer = 0.0f;
                     this._touchFlag = true;
                     this._touchPhase = TouchPhase.Began;
                     Debug.Log("押した瞬間");
@@ -65,7 +69,7 @@ public class TouchState : MonoBehaviour
                 {
                     this._touchFlag = true;
                     this._touchPhase = TouchPhase.Moved;
-                    Debug.Log("押しっぱなし");
+                    //Debug.Log("押しっぱなし");
                 }
 
                 // 座標取得
@@ -87,8 +91,22 @@ public class TouchState : MonoBehaviour
                     this._touchPosition = touch.position;
                     this._touchPhase = touch.phase;
                     this._touchFlag = true;
+                    if (touchPhase == TouchPhase.Began)
+                    {
+                        touchTimer = 0.0f;
+                    }
                 }
             }
+        }
+
+        if (_touchFlag == true)
+        {
+            touchTimer += Time.deltaTime;
+        }
+        else
+        {
+            touchTimer = 0.0f;
+            joyStick.active = false;
         }
     }
 
@@ -113,5 +131,35 @@ public class TouchState : MonoBehaviour
     public bool getTouchBegan()
     {
         return _touchFlag == true && _touchPhase == TouchPhase.Began;
+    }
+    //タッチ終了
+    public bool getTouchEnded()
+    {
+        return _touchFlag == true && _touchPhase == TouchPhase.Ended;
+    }
+    //即座にタッチ終了
+    public bool getTouchEndedSoon()
+    {
+        return _touchFlag == true && _touchPhase == TouchPhase.Ended && touchTimer <= 0.3f;
+    }
+
+    public static bool IsUGUIHit(Vector2 _scrPos)
+    { // Input.mousePosition
+        PointerEventData pointer = new PointerEventData(EventSystem.current);
+        pointer.position = _scrPos;
+        List<RaycastResult> result = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointer, result);
+
+        if(result.Count == 0)
+        {
+            return true;
+        }
+        //ジョイスティックに当たってたら
+        else if(result[0].gameObject.CompareTag("JoyStick"))
+        {
+            return true;
+        }
+
+        return !(result.Count > 0);
     }
 }

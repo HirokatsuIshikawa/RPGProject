@@ -1,18 +1,43 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ContentManager : MonoBehaviour
 {
     static public ContentManager instance;
-    public GameObject PlayerObj;
-    public Transform MapLayer;
-    public GameObject MapObj;
-    public MessageWindow messageWindow;
 
+    //////////////////////////////////////////マネージャー//////////////////////////////////////////
+    //メッセージ
+    public MessageManager messageManager;
+    //画面シート処理
+    public ScreenManager screenManager;
+    //////////////////////////////////////////オブジェクト//////////////////////////////////////////
+    //プレイヤー
+    public GameObject PlayerObj;
+    //カメラコントローラー
+    public CameraControll cameraController;
+    //マップレイヤー
+    public Transform MapLayer;
+    //マップ
+    public GameObject MapObj;
+    //メッセージウィンドウ
+    public MessageWindow messageWindow;
+    //暗幕
     public Image darkField;
-    public bool changingMap = false;
-    public bool moveContactFlg = false;
+    //イベント中フラグ
+    public bool nowEventFlg = false;
+    //イベント領域接触フラグ、移動直後などに移動しないよう
+    public bool eventAreaEntryFlg = false;
+    //現在のイベント
+    public EventObject.EventType nowEventType;
+    //アクション冷却時間
+    public float actionCoolTime = 0.0f;
+
+    //マップ変更設定
+    private string changeMapName;
+    private Vector2 changeMapPos;
+    private CharaAnime.DIRECTION changeMapDirection;
 
     void Awake()
     {
@@ -30,102 +55,97 @@ public class ContentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //イベント中
+        if (isEventing())
+        {
+            switch (nowEventType)
+            {
+                case EventObject.EventType.Talk:
+                    messageManager.talkUpdate();
+                    break;
+                case EventObject.EventType.Move:
+                    break;
+            }
+        }
 
+        if(actionCoolTime > 0.0f)
+        {
+            actionCoolTime -= Time.deltaTime;
+            if(actionCoolTime < 0)
+            {
+                actionCoolTime = 0;
+            }
+        }
     }
 
-    private string changeMapName;
-    private Vector2 changeMapPos;
-    private CharaAnime.DIRECTION changeMapDirection;
-
+    //マップ移動開始
     public void changeMapStart(string mapName, Vector2 mapPos, CharaAnime.DIRECTION direction)
     {
+        //イベントフラグ
+        nowEventFlg = true;
+        nowEventType = EventObject.EventType.Move;
+        //変更後設定
         changeMapName = mapName;
         changeMapPos = mapPos;
         changeMapDirection = direction;
-        changingMap = true;
-        //FadeIn(0.7f, "changeMap");
-        ChangeColor(Color.black, 0.7f, "changeMap");
+        //フェードイン
+        screenManager.changeColor(Color.black, 0.7f, "changeMap");
     }
 
+    //マップ変更処理
     public void changeMap()
     {
+        //マップ差し替え
         GameObject obj = Instantiate(Resources.Load<GameObject>(changeMapName), MapLayer);
         Destroy(MapObj);
         MapObj = obj;
         MapObj.SetActive(true);
+        //プレイヤー位置・向き設定
+        PlayerAnime playerAnime = PlayerObj.GetComponent<PlayerAnime>();
+        playerAnime.rigidBody.velocity = Vector2.zero;
+        playerAnime.inputAxis = Vector2.zero;
         PlayerObj.transform.localPosition = new Vector3(changeMapPos.x, changeMapPos.y, 0);
-        PlayerObj.GetComponent<PlayerAnime>().charaDirection = changeMapDirection;
-        //FadeOut(0.7f, "changeMapEnd");
-        ChangeColor(Color.clear, 0.7f, "changeMapEnd");
+        playerAnime.charaDirection = changeMapDirection;
+        playerAnime.changeDirection();
+        //カメラ可動範囲の当たり判定を設定
+        cameraController.setCameraBound(MapObj.GetComponent<CompositeCollider2D>());
+        //フェードアウト
+        screenManager.changeColor(Color.clear, 0.7f, "changeMapEnd");
     }
 
+    //マップ変更終了
     public void changeMapEnd()
     {
-        changingMap = false;
+        eventEnd();
     }
 
-    void ChangeColor(Color color, float time = 1.0f, string callBackStr = null)
-    {
-        // SetValue()を毎フレーム呼び出して、１秒間に０から１までの値の中間値を渡す
-        //iTween.ValueTo(gameObject, iTween.Hash("from", 0f, "to", 1f, "time", 1f, "onupdate", "SetValue", "oncomplete", callBackStr));
-        Hashtable hash = new Hashtable(){
-            {"from", darkField.color},
-            {"to", color},
-            {"time", time},
-            {"onupdate", "SetValue"}
-        };
-        if (callBackStr != null)
-        {
-            hash.Add("oncomplete", callBackStr);
-        }
-        iTween.ValueTo(gameObject, hash);
 
+
+    //イベント中状態取得
+    public bool isEventing()
+    {
+        return nowEventFlg;
     }
 
-    void FadeIn(float time = 1.0f, string callBackStr = null)
+    //イベント開始
+    public void eventStart(List<string> msg)
     {
-        // SetValue()を毎フレーム呼び出して、１秒間に０から１までの値の中間値を渡す
-        //iTween.ValueTo(gameObject, iTween.Hash("from", 0f, "to", 1f, "time", 1f, "onupdate", "SetValue", "oncomplete", callBackStr));
-        Hashtable hash = new Hashtable(){
-            {"from", 0f},
-            {"to", 1f},
-            {"time", time},
-            {"onupdate", "SetValue"}
-        };
-        if (callBackStr != null)
-        {
-            hash.Add("oncomplete", callBackStr);
-        }
-        iTween.ValueTo(gameObject, hash);
+        messageManager.messageList = msg;
+        nowEventType = EventObject.EventType.Talk;
+        messageManager.messageStart();
     }
-    void FadeOut(float time = 1.0f, string callBackStr = null)
+
+    //イベント終了
+    public void eventEnd()
     {
-        // SetValue()を毎フレーム呼び出して、１秒間に１から０までの値の中間値を渡す        
-        Hashtable hash = new Hashtable(){
-            { "from", 1f},
-            { "to", 0f},
-            { "time", time},
-            { "onupdate", "SetValue"}
-        };
-        if (callBackStr != null)
-        {
-            hash.Add("oncomplete", callBackStr);
-        }
-        iTween.ValueTo(gameObject, hash);
-    }
-    void SetValue(float alpha)
-    {
-        // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
-        darkField.color = new Color(0, 0, 0, alpha);
-    }
-    void SetValue(Color color)
-    {
-        // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
-        darkField.color = color;
+        nowEventFlg = false;
+        nowEventType = EventObject.EventType.None;
+        actionCoolTime = 0.3f;
     }
 }

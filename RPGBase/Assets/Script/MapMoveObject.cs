@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MapObject : MonoBehaviour
+public class MapMoveObject : MonoBehaviour
 {
     public string changeMapName;
     public Vector2 movePos;
@@ -10,18 +10,18 @@ public class MapObject : MonoBehaviour
     {
 
         Debug.Log(gameObject.name + " : " + "Trigger");
-        //マップ変更中は実行しない
-        if (ContentManager.instance.changingMap)
+        //マップ変更などのイベント中は実行しないけど接触フラグを立てる
+        if (ContentManager.instance.isEventing())
         {
-            ContentManager.instance.moveContactFlg = true;
+            ContentManager.instance.eventAreaEntryFlg = true;
             return;
         }
         else
         {
-            if (ContentManager.instance.moveContactFlg == false)
+            if (ContentManager.instance.eventAreaEntryFlg == false)
             {
                 ContentManager.instance.changeMapStart(changeMapName, movePos, direction);
-                ContentManager.instance.moveContactFlg = true;
+                ContentManager.instance.eventAreaEntryFlg = true;
             }
         }
     }
@@ -31,7 +31,7 @@ public class MapObject : MonoBehaviour
     {
         Debug.Log(gameObject.name + " : " + "TriggerExit");
         //if (ContentManager.instance.changingMap) return;
-        ContentManager.instance.moveContactFlg = false;
+        ContentManager.instance.eventAreaEntryFlg = false;
     }
 
 }
