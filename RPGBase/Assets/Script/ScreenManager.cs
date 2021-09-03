@@ -3,9 +3,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //画面全体効果
-public class ScreenManager : MonoBehaviour
+public class ScreenManager
 {
     public Image darkField;
+
+    public ScreenManager(Image field)
+    {
+        darkField = field;
+    }
+
 
     public void changeColor(Color color, float time = 1.0f, string callBackStr = null)
     {
@@ -21,7 +27,7 @@ public class ScreenManager : MonoBehaviour
         {
             hash.Add("oncomplete", callBackStr);
         }
-        iTween.ValueTo(gameObject, hash);
+        iTween.ValueTo(ContentManager.instance.gameObject, hash);
     }
 
     private void FadeIn(float time = 1.0f, string callBackStr = null)
@@ -38,7 +44,7 @@ public class ScreenManager : MonoBehaviour
         {
             hash.Add("oncomplete", callBackStr);
         }
-        iTween.ValueTo(gameObject, hash);
+        iTween.ValueTo(ContentManager.instance.gameObject, hash);
     }
 
     private void FadeOut(float time = 1.0f, string callBackStr = null)
@@ -54,21 +60,7 @@ public class ScreenManager : MonoBehaviour
         {
             hash.Add("oncomplete", callBackStr);
         }
-        iTween.ValueTo(gameObject, hash);
-    }
-
-    //暗幕セット
-    private void SetValue(float alpha)
-    {
-        // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
-        darkField.color = new Color(0, 0, 0, alpha);
-    }
-
-    //色暗幕
-    private void SetValue(Color color)
-    {
-        // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
-        darkField.color = color;
+        iTween.ValueTo(ContentManager.instance.gameObject, hash);
     }
 
 }

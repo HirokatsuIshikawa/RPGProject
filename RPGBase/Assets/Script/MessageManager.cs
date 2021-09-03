@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class MessageManager : MonoBehaviour
+public class MessageManager
 {
     //メッセージウィンドウ
     public MessageWindow messageWindow;
@@ -18,6 +17,12 @@ public class MessageManager : MonoBehaviour
     public bool talkCompFlg { get; }
     public int messageListIndex { get; }
 
+    public MessageManager(MessageWindow window)
+    {
+        messageWindow = window;
+    }
+
+
     // Update is called once per frame
     public void talkUpdate()
     {
@@ -30,7 +35,7 @@ public class MessageManager : MonoBehaviour
             }
         }
     }
-    
+
     //会話開始
     public void messageStart()
     {
@@ -46,21 +51,15 @@ public class MessageManager : MonoBehaviour
             { "onupdate", "SetMessage"},
             { "oncomplete", "compMessage"}
         };
-        iTween.ValueTo(gameObject, hash);
+        iTween.ValueTo(ContentManager.instance.gameObject, hash);
     }
 
-    //iTween用メッセージセット
-    private void SetMessage(int num)
+    //現在の文字列の指定カウント数までを表示
+    public void setMessageNum(int num)
     {
         messageWindow.text.text = messageList[_messageListIndex].Substring(0, num);
     }
-
-    //メッセージ読み終わり
-    private void compMessage()
-    {
-        _talkCompFlg = true;
-    }
-
+    
     //次のメッセージへ
     public void nextMessage()
     {
@@ -73,6 +72,12 @@ public class MessageManager : MonoBehaviour
         {
             messageEnd();
         }
+    }
+
+    //メッセージ読み込み完了・一時停止
+    public void compMessage()
+    {
+        _talkCompFlg = true;
     }
 
     //メッセージ終了

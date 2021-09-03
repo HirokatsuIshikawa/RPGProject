@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -50,12 +49,13 @@ public class ContentManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Screen.SetResolution(1080, 1920, true);
+        Screen.SetResolution(540, 960, false, 60);
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        screenManager = new ScreenManager(darkField);
+        messageManager = new MessageManager(messageWindow);
     }
 
     // Update is called once per frame
@@ -74,10 +74,10 @@ public class ContentManager : MonoBehaviour
             }
         }
 
-        if(actionCoolTime > 0.0f)
+        if (actionCoolTime > 0.0f)
         {
             actionCoolTime -= Time.deltaTime;
-            if(actionCoolTime < 0)
+            if (actionCoolTime < 0)
             {
                 actionCoolTime = 0;
             }
@@ -148,4 +148,32 @@ public class ContentManager : MonoBehaviour
         nowEventType = EventObject.EventType.None;
         actionCoolTime = 0.3f;
     }
+
+    //iTween用メッセージセット
+    private void SetMessage(int num)
+    {
+        messageManager.setMessageNum(num);
+    }
+
+    //メッセージ読み終わり
+    private void compMessage()
+    {
+        messageManager.compMessage();
+    }
+
+
+    //暗幕セット
+    private void SetValue(float alpha)
+    {
+        // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
+        darkField.color = new Color(0, 0, 0, alpha);
+    }
+
+    //色暗幕
+    private void SetValue(Color color)
+    {
+        // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
+        darkField.color = color;
+    }
+
 }

@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -6,6 +7,10 @@ using UnityEngine;
 public class CharaAnimeEditor : Editor
 {
 
+    [NonSerialized]
+    private Texture2D spriteTex;
+
+    [NonSerialized]
     protected string spriteName = "";
     /// <summary>
     /// InspectorのGUIを更新
@@ -15,6 +20,9 @@ public class CharaAnimeEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
+        EditorGUI.BeginChangeCheck();
+        
+        spriteTex = (Texture2D)EditorGUILayout.ObjectField("master", spriteTex, typeof(Texture2D), false, null);
         GUILayout.Label("CharaSprietName");
         spriteName = GUILayout.TextField(spriteName);
         //ボタンを表示
@@ -37,7 +45,7 @@ public class CharaAnimeEditor : Editor
             }
 
             //スプライトリストを取得
-            Sprite[] sprites = Resources.LoadAll<Sprite>("charaList");
+            Sprite[] sprites = Resources.LoadAll<Sprite>(spriteTex.name);
             //スプライトレンダーのスプライト変更
             data.gameObject.GetComponent<SpriteRenderer>().sprite = getSprite(sprites, spriteName, 1);
             //上
