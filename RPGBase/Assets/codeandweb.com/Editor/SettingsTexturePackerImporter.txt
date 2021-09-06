@@ -3,16 +3,16 @@ importPivots: 1
 tpsheetFileNames:
 - Assets/charaImg/Resources/charaList.tpsheet
 - Assets/charaImg/Resources/iconList.tpsheet
-- Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/MapImg/rpgsheet.tpsheet
+- Assets/MapImg/Resources/auto_test_sheet.tpsheet
+- Assets/MapImg/Resources/rpgsheet.tpsheet
 textureFileNames:
 - Assets/charaImg/Resources/charaList.png
 - Assets/charaImg/Resources/iconList.png
-- Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/MapImg/rpgsheet.png
+- Assets/MapImg/Resources/auto_test_sheet.png
+- Assets/MapImg/Resources/rpgsheet.png
 normalmapFileNames:
 - 
 - 
-- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 enableDebugOutput: 0

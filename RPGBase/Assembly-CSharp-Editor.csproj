@@ -54,9 +54,47 @@
     <UnityVersion>2020.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\WolfAutoTile.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\RandomTile\RandomTile.cs" />
+    <Compile Include="Assets\Editor\Brushes\CoordinateBrush\CoordinateBrush.cs" />
+    <Compile Include="Assets\Editor\Runtime\GridInformation\GridInformation.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\TerrainTile\TerrainTile.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\PipelineTileMenu.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\PipelineTile\PipelineTile.cs" />
+    <Compile Include="Assets\Editor\Menu\CustomRuleTileMenu.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleTile\RuleTileEditor.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\PrefabRandomBrush\PrefabRandomBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\GameObjectBrush\GameObjectBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\PrefabBrush\PrefabBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\RandomBrush\RandomBrush.cs" />
+    <Compile Include="Assets\Editor\Runtime\Brushes\TintTextureGenerator.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleOverrideTile\PopulateRuleOverrideTileWizard.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleOverrideTile\RuleOverrideTileEditor.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\TerrainTile\TerrainObjTile.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\BrushMenuItem.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\TerrainTileMenu.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\IsometricRuleTile\IsometricRuleTile.cs" />
+    <Compile Include="Assets\Editor\Brushes\TintBrushSmooth\TintBrushSmooth.cs" />
+    <Compile Include="Assets\Editor\Brushes\GroupBrush\GroupBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\BasePrefabBrush.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\HexagonalRuleTile\HexagonalRuleTile.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\RuleTile\RuleTile.cs" />
+    <Compile Include="Assets\Editor\Menu\MenuItemOrder.cs" />
+    <Compile Include="Assets\Editor\Brushes\TintBrush\TintBrush.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
+    <Compile Include="Assets\Editor\Tiles\HexagonalRuleTile\HexagonalRuleTileEditor.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleOverrideTile\AdvancedRuleOverrideTileEditor.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\RandomTileMenu.cs" />
+    <Compile Include="Assets\Editor\Brushes\LineBrush\LineBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\TintBrushSmooth\TintTextureGeneratorEditor.cs" />
+    <Compile Include="Assets\Editor\Tiles\IsometricRuleTile\IsometricRuleTileEditor.cs" />
+    <Compile Include="Assets\Editor\NonResources.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\AnimatedTile\AnimatedTile.cs" />
+    <Compile Include="Assets\Editor\Runtime\Tiles\WeightedRandomTile\WeightedRandomTile.cs" />
     <Compile Include="Assets\Editor\ScreenshotTools.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\WeightedRandomTileMenu.cs" />
     <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
+    <None Include="Assets\Editor\Runtime\Brushes\TintedTilemap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -758,16 +796,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{090078E2-8483-0FFF-DB12-104F40C9EF7E}</Project>
       <Name>Assembly-CSharp</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{1A086A93-A81C-902A-3660-2B07CB63C822}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
-      <Project>{1E24B7B6-FA4C-8162-6897-A03594459BC7}</Project>
-      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

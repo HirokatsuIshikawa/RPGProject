@@ -748,18 +748,7 @@
       <HintPath>C:/Users/石川寛克/Desktop/ネタ帳/RPGBase/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{1A086A93-A81C-902A-3660-2B07CB63C822}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
-      <Project>{1E24B7B6-FA4C-8162-6897-A03594459BC7}</Project>
-      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

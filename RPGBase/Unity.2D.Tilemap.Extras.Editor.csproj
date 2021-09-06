@@ -54,31 +54,32 @@
     <UnityVersion>2020.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\CoordinateBrush\CoordinateBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\Menu\PipelineTileMenu.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Menu\CustomRuleTileMenu.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\RuleTile\RuleTileEditor.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\PrefabBrushes\PrefabRandomBrush\PrefabRandomBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\GameObjectBrush\GameObjectBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\PrefabBrushes\PrefabBrush\PrefabBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\RandomBrush\RandomBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\RuleOverrideTile\PopulateRuleOverrideTileWizard.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\RuleOverrideTile\RuleOverrideTileEditor.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\PrefabBrushes\BrushMenuItem.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\Menu\TerrainTileMenu.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\TintBrushSmooth\TintBrushSmooth.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\GroupBrush\GroupBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\PrefabBrushes\BasePrefabBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Menu\MenuItemOrder.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\TintBrush\TintBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\HexagonalRuleTile\HexagonalRuleTileEditor.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\RuleOverrideTile\AdvancedRuleOverrideTileEditor.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\Menu\RandomTileMenu.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\LineBrush\LineBrush.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Brushes\TintBrushSmooth\TintTextureGeneratorEditor.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\IsometricRuleTile\IsometricRuleTileEditor.cs" />
-    <Compile Include="Assets\Editor\AutoTile\Editor\Tiles\Menu\WeightedRandomTileMenu.cs" />
-    <None Include="Assets\Editor\AutoTile\Editor\Unity.2D.Tilemap.Extras.Editor.asmdef" />
+    <Compile Include="Assets\Editor\Brushes\CoordinateBrush\CoordinateBrush.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\PipelineTileMenu.cs" />
+    <Compile Include="Assets\Editor\Menu\CustomRuleTileMenu.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleTile\RuleTileEditor.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\PrefabRandomBrush\PrefabRandomBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\GameObjectBrush\GameObjectBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\PrefabBrush\PrefabBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\RandomBrush\RandomBrush.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleOverrideTile\PopulateRuleOverrideTileWizard.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleOverrideTile\RuleOverrideTileEditor.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\BrushMenuItem.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\TerrainTileMenu.cs" />
+    <Compile Include="Assets\Editor\Brushes\TintBrushSmooth\TintBrushSmooth.cs" />
+    <Compile Include="Assets\Editor\Brushes\GroupBrush\GroupBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\PrefabBrushes\BasePrefabBrush.cs" />
+    <Compile Include="Assets\Editor\Menu\MenuItemOrder.cs" />
+    <Compile Include="Assets\Editor\Brushes\TintBrush\TintBrush.cs" />
+    <Compile Include="Assets\Editor\Tiles\HexagonalRuleTile\HexagonalRuleTileEditor.cs" />
+    <Compile Include="Assets\Editor\Tiles\RuleOverrideTile\AdvancedRuleOverrideTileEditor.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\RandomTileMenu.cs" />
+    <Compile Include="Assets\Editor\Brushes\LineBrush\LineBrush.cs" />
+    <Compile Include="Assets\Editor\Brushes\TintBrushSmooth\TintTextureGeneratorEditor.cs" />
+    <Compile Include="Assets\Editor\Tiles\IsometricRuleTile\IsometricRuleTileEditor.cs" />
+    <Compile Include="Assets\Editor\ScreenshotTools.cs" />
+    <Compile Include="Assets\Editor\Tiles\Menu\WeightedRandomTileMenu.cs" />
+    <None Include="Assets\Editor\Unity.2D.Tilemap.Extras.Editor.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -692,13 +693,7 @@
       <HintPath>C:/Users/石川寛克/Desktop/ネタ帳/RPGBase/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{1A086A93-A81C-902A-3660-2B07CB63C822}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
