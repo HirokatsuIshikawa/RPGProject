@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Item", menuName = "ItemData")]//  CreateからCreateShelterというメニューを表示し、Shelterを作成する
+[CreateAssetMenu(fileName = "Item", menuName = "ItemData/ItemData")]//  CreateからCreateShelterというメニューを表示し、Shelterを作成する
 public class ItemData : ScriptableObject
 {
 

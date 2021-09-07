@@ -55,24 +55,20 @@ public class CharaAnime : MonoBehaviour
 
     void Update()
     {
-
     }
-
-
+    
     // Update is calle
     protected void FixedUpdate()
     {
-
         //イベント中は実行しない
-        if (ContentManager.instance.isEventing())
+        if (ContentManager.instance.isActioning())
         {
             return;
         }
         moveAnime();
         Clamp();
     }
-
-
+    
     public void moveAnime() {
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y * 0.0001f);
         //現在のスプライト番号を取得

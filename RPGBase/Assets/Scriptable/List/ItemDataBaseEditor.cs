@@ -15,7 +15,7 @@ public class ItemDataBaseEditor : Editor
         if (GUILayout.Button("DataSet"))
         {
             //csvを読み込む
-            var path = EditorUtility.OpenFilePanel("pos text", "", "csv");
+            var path = EditorUtility.OpenFilePanel("アイテムCSV", "", "csv");
             if (string.IsNullOrEmpty(path))
             {
                 return;
@@ -66,6 +66,7 @@ public class ItemDataBaseEditor : Editor
         }
         //アセットのセーブ
         AssetDatabase.SaveAssets();
+        EditorUtility.SetDirty(dataBase);
     }
 }
 

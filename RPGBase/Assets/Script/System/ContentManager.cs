@@ -38,6 +38,9 @@ public class ContentManager : MonoBehaviour
     private Vector2 changeMapPos;
     private CharaAnime.DIRECTION changeMapDirection;
 
+    //メニューフラグ
+    public bool menuFlg = false;
+
     void Awake()
     {
         if (instance == null)
@@ -62,7 +65,7 @@ public class ContentManager : MonoBehaviour
     void Update()
     {
         //イベント中
-        if (isEventing())
+        if (isActioning())
         {
             switch (nowEventType)
             {
@@ -126,6 +129,12 @@ public class ContentManager : MonoBehaviour
     }
 
 
+
+    //複数アクション中状態取得
+    public bool isActioning()
+    {
+        return nowEventFlg || menuFlg;
+    }
 
     //イベント中状態取得
     public bool isEventing()

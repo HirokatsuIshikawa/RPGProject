@@ -17,7 +17,7 @@ public class PlayerAnime : CharaAnime
     void Update()
     {
         //イベント中は実行しない
-        if (ContentManager.instance.isEventing())
+        if (ContentManager.instance.isActioning())
         {
             return;
         }
