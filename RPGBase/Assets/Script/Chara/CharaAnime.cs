@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CharaAnime : MonoBehaviour
 {
@@ -39,10 +40,11 @@ public class CharaAnime : MonoBehaviour
     //キャラの向き
     public DIRECTION charaDirection = DIRECTION.down;
 
-
     //方向
     public Vector2 inputAxis;
     public Vector2 chipSize = new Vector2(0.32f, 0.48f);
+
+    public bool autoMove = false;
 
     // Start is called before the first frame update
     protected void Start()
@@ -55,6 +57,7 @@ public class CharaAnime : MonoBehaviour
 
     void Update()
     {
+
     }
     
     // Update is calle
@@ -65,11 +68,11 @@ public class CharaAnime : MonoBehaviour
         {
             return;
         }
-        moveAnime();
+        MoveAnime();
         Clamp();
     }
     
-    public void moveAnime() {
+    public void MoveAnime() {
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y * 0.0001f);
         //現在のスプライト番号を取得
         nowSpriteNum = spriteNum;
@@ -137,7 +140,10 @@ public class CharaAnime : MonoBehaviour
                     spriteTime = 0;
                 }
             }
-            rigidBody.velocity = inputAxis.normalized * SPEED;
+            if (autoMove == false)
+            {
+                rigidBody.velocity = inputAxis.normalized * SPEED;
+            }
         }
         else
         {
@@ -154,7 +160,7 @@ public class CharaAnime : MonoBehaviour
         }
     }
 
-    public void changeDirection()
+    public void ChangeDirection()
     {
         switch(charaDirection)
         {
@@ -200,4 +206,5 @@ public class CharaAnime : MonoBehaviour
         Debug.Log(gameObject.name + " : " + "Collision_" + collision.gameObject.name);
         //rigidBody.velocity = Vector2.zero;
     }
+
 }

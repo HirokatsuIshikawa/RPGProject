@@ -37,7 +37,7 @@ public class PlayerAnime : CharaAnime
 
     private new void FixedUpdate()
     {
-        base.moveAnime();
+        base.MoveAnime();
 
         switch (charaDirection)
         {

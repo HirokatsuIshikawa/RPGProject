@@ -7,19 +7,15 @@ public class UIController : MonoBehaviour
     public GameObject MenuObject;
     [SerializeField]
     public Button openMenuButton;
-
-
-
-
-
-    public void buttonOnMenu()
+    
+    public void ButtonOnMenu()
     {
         MenuObject.SetActive(true);
         openMenuButton.gameObject.SetActive(false);
         ContentManager.instance.menuFlg = true;
     }
 
-    public void buttonCloseMenu()
+    public void ButtonCloseMenu()
     {
         MenuObject.SetActive(false);
         openMenuButton.gameObject.SetActive(true);

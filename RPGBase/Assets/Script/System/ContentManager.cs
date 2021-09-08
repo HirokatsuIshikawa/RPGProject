@@ -115,7 +115,7 @@ public class ContentManager : MonoBehaviour
         playerAnime.inputAxis = Vector2.zero;
         PlayerObj.transform.localPosition = new Vector3(changeMapPos.x, changeMapPos.y, 0);
         playerAnime.charaDirection = changeMapDirection;
-        playerAnime.changeDirection();
+        playerAnime.ChangeDirection();
         //カメラ可動範囲の当たり判定を設定
         cameraController.setCameraBound(MapObj.GetComponent<CompositeCollider2D>());
         //フェードアウト
