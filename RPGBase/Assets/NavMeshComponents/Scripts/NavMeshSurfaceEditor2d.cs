@@ -1,5 +1,5 @@
 #define NAVMESHCOMPONENTS_SHOW_NAVMESHDATA_REF
-
+#if UNITY_EDITOR
 using System.Linq;
 using UnityEditor.IMGUI.Controls;
 using UnityEditorInternal;
@@ -440,3 +440,4 @@ namespace UnityEditor.AI
         }
     }
 }
+#endif
