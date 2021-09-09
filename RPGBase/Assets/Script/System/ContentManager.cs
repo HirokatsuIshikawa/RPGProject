@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ContentManager : MonoBehaviour
@@ -11,6 +13,10 @@ public class ContentManager : MonoBehaviour
     public MessageManager messageManager;
     //画面シート処理
     public ScreenManager screenManager;
+    //タッチステート
+    public TouchState touchState;
+    //ナビメッシュ焼き
+    public NavMeshSurface2d naviSurface;
     //////////////////////////////////////////オブジェクト//////////////////////////////////////////
     //プレイヤー
     public GameObject PlayerObj;
@@ -57,8 +63,6 @@ public class ContentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        screenManager = new ScreenManager(darkField);
-        messageManager = new MessageManager(messageWindow);
     }
 
     // Update is called once per frame
@@ -125,6 +129,7 @@ public class ContentManager : MonoBehaviour
     //マップ変更終了
     public void changeMapEnd()
     {
+        naviSurface.BuildNavMesh();
         eventEnd();
     }
 
@@ -184,5 +189,16 @@ public class ContentManager : MonoBehaviour
         // iTweenで呼ばれたら、受け取った値をImageのアルファ値にセット
         darkField.color = color;
     }
+
+    public void PushStartButton()
+    {
+        ChangeMainScene();
+    }
+
+    private void ChangeMainScene()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
 
 }

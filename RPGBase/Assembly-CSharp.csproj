@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scriptable\List\MaterialDataBaseEditor.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLinkEditor.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
+    <Compile Include="Assets\Script\System\ContentPartsHolder.cs" />
     <None Include="Assets\codeandweb.com\Readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
