@@ -251,11 +251,10 @@ GameObject:
   - component: {fileID: 885645575}
   - component: {fileID: 885645579}
   - component: {fileID: 885645578}
+  - component: {fileID: 163904268}
   - component: {fileID: 4377924519609063487}
   - component: {fileID: 885645577}
   - component: {fileID: 885645576}
-  - component: {fileID: 163904268}
-  - component: {fileID: 163904269}
   m_Layer: 0
   m_Name: EventChara
   m_TagString: Untagged
@@ -369,6 +368,26 @@ MonoBehaviour:
   charaDirection: 1
   inputAxis: {x: 0, y: 0}
   chipSize: {x: 0.32, y: 0.48}
+--- !u!114 &163904268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885645574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528006342baac674aa8141f23e8e75c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseType: 2
+  anime: {fileID: 885645578}
+  targetList: []
+  targetPosList: []
+  targetIndex: 0
+  animator: {fileID: 0}
+  distance: 0
+  beforePos: {x: 0, y: 0, z: 0}
 --- !u!114 &4377924519609063487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,40 +451,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.23}
   m_EdgeRadius: 0
---- !u!114 &163904268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885645574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528006342baac674aa8141f23e8e75c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!195 &163904269
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885645574}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 1
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.46
-  m_BaseOffset: 0.23
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &1378875313
 GameObject:
   m_ObjectHideFlags: 0
@@ -21683,7 +21668,6 @@ GameObject:
   - component: {fileID: 2485344573681783011}
   - component: {fileID: 2485344573681783010}
   - component: {fileID: 2485344573681783004}
-  - component: {fileID: 6317071455765184813}
   m_Layer: 0
   m_Name: TopTilemap
   m_TagString: Untagged
@@ -25827,22 +25811,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &6317071455765184813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2485344573681783008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &2485344574319486545
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,9 +43,7 @@ public class CharaAnime : MonoBehaviour
     //方向
     public Vector2 inputAxis;
     public Vector2 chipSize = new Vector2(0.32f, 0.48f);
-
-    public bool autoMove = false;
-
+    
     // Start is called before the first frame update
     protected void Start()
     //void Start()
@@ -59,7 +57,7 @@ public class CharaAnime : MonoBehaviour
     {
 
     }
-    
+
     // Update is calle
     protected void FixedUpdate()
     {
@@ -71,8 +69,9 @@ public class CharaAnime : MonoBehaviour
         MoveAnime();
         Clamp();
     }
-    
-    public void MoveAnime() {
+
+    public void MoveAnime()
+    {
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y * 0.0001f);
         //現在のスプライト番号を取得
         nowSpriteNum = spriteNum;
@@ -140,10 +139,7 @@ public class CharaAnime : MonoBehaviour
                     spriteTime = 0;
                 }
             }
-            if (autoMove == false)
-            {
-                rigidBody.velocity = inputAxis.normalized * SPEED;
-            }
+            rigidBody.velocity = inputAxis.normalized * SPEED;
         }
         else
         {
@@ -162,7 +158,7 @@ public class CharaAnime : MonoBehaviour
 
     public void ChangeDirection()
     {
-        switch(charaDirection)
+        switch (charaDirection)
         {
             case DIRECTION.up:
                 nowSprite = upSprite;
@@ -200,7 +196,7 @@ public class CharaAnime : MonoBehaviour
         transform.position = pos;
         */
     }
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(gameObject.name + " : " + "Collision_" + collision.gameObject.name);

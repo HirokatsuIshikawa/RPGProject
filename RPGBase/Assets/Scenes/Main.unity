@@ -888,7 +888,6 @@ GameObject:
   - component: {fileID: 905157242}
   - component: {fileID: 905157241}
   - component: {fileID: 905157243}
-  - component: {fileID: 905157244}
   m_Layer: 0
   m_Name: ContentManager
   m_TagString: Untagged
@@ -909,7 +908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchState: {fileID: 905157243}
-  naviSurface: {fileID: 905157244}
   PlayerObj: {fileID: 1784861476}
   cameraController: {fileID: 713330375}
   MapLayer: {fileID: 1749163972}
@@ -952,40 +950,6 @@ MonoBehaviour:
   _touchPosition: {x: 0, y: 0}
   _touchPhase: 0
   touchTimer: 0
---- !u!114 &905157244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905157240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_OverrideByGrid: 0
-  m_UseMeshPrefab: {fileID: 0}
-  m_CompressBounds: 0
-  m_OverrideVector: {x: 1, y: 1, z: 1}
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.06666667
-  m_BuildHeightMesh: 0
-  m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 0}
 --- !u!1001 &909793329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1112,12 +1076,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 163904268, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
       propertyPath: chaseType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 163904268, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 163904268, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
+      propertyPath: targetList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 163904268, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
+      propertyPath: targetList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1784861478}
     - target: {fileID: 163904269, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
       propertyPath: m_Speed
       value: 1
@@ -1402,7 +1374,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6317071455765184813, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6317071455765184813, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
+    - {fileID: 163904269, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80d901d6a5a138e45beb4f960a3836d6, type: 3}
 --- !u!4 &1290797286 stripped
 Transform:
@@ -2049,7 +2027,6 @@ MonoBehaviour:
   charaDirection: 1
   inputAxis: {x: 0, y: 0}
   chipSize: {x: 0.32, y: 0.48}
-  autoMove: 0
   joystick: {fileID: 111338081}
   eventCollider: {fileID: 1784861482}
 --- !u!50 &1784861480

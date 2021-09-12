@@ -16,7 +16,7 @@ public class ContentManager : MonoBehaviour
     //タッチステート
     public TouchState touchState;
     //ナビメッシュ焼き
-    public NavMeshSurface2d naviSurface;
+    //public NavMeshSurface2d naviSurface;
     //////////////////////////////////////////オブジェクト//////////////////////////////////////////
     //プレイヤー
     public GameObject PlayerObj;
@@ -58,7 +58,8 @@ public class ContentManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Screen.SetResolution(540, 960, false, 60);
+        Screen.SetResolution(540, 960, false);
+        Application.targetFrameRate = 60;
     }
     // Start is called before the first frame update
     void Start()
@@ -129,7 +130,7 @@ public class ContentManager : MonoBehaviour
     //マップ変更終了
     public void changeMapEnd()
     {
-        naviSurface.BuildNavMesh();
+        //naviSurface.BuildNavMesh();
         eventEnd();
     }
 

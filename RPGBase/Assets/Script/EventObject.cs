@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class EventObject : MonoBehaviour
     public enum EventStartType
     {
         None,       //起動しない
+        Auto,       //同マップに存在したら自動実行
         Entry,      //当たり判定に進入
         Tap,        //当たり判定が当たっているときにタップ
         InMap,      //マップ開始時
@@ -18,7 +18,6 @@ public class EventObject : MonoBehaviour
         None,
         Talk,
         Move
-
     }
     
     public EventStartType eventStartType = EventStartType.Tap;
