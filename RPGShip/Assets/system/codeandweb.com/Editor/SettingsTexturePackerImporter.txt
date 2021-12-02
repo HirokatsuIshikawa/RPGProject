@@ -1,0 +1,21 @@
+version: 2
+importPivots: 1
+tpsheetFileNames:
+- Assets/Img/charaImg/Resources/charaList.tpsheet
+- Assets/Img/charaImg/Resources/iconList.tpsheet
+- Assets/Map/MapImg/Resources/auto_test_sheet.tpsheet
+- Assets/Map/MapImg/Resources/rpgsheet.tpsheet
+- Assets/system/system.tpsheet
+textureFileNames:
+- Assets/Img/charaImg/Resources/charaList.png
+- Assets/Img/charaImg/Resources/iconList.png
+- Assets/Map/MapImg/Resources/auto_test_sheet.png
+- Assets/Map/MapImg/Resources/rpgsheet.png
+- Assets/system/system.png
+normalmapFileNames:
+- 
+- 
+- 
+- 
+- 
+enableDebugOutput: 0

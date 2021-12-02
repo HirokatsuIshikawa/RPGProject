@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: 9d8d72f51279e9541ae28af9ed3abd2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -703463745440013823
+    second: odoriko_001
+  - first:
+      213: 5323460482410662881
+    second: odoriko_002
+  - first:
+      213: 2861660717768232000
+    second: odoriko_003
+  - first:
+      213: 6669140768368612468
+    second: odoriko_004
+  - first:
+      213: 3703996382711390015
+    second: odoriko_005
+  - first:
+      213: 1080794630395656530
+    second: odoriko_006
+  - first:
+      213: 4627232781159698095
+    second: odoriko_007
+  - first:
+      213: -2702331655360336410
+    second: odoriko_008
+  - first:
+      213: 4804438834083686546
+    second: odoriko_009
+  - first:
+      213: -5969403234184633962
+    second: odoriko_010
+  - first:
+      213: -3045994997407571371
+    second: odoriko_011
+  - first:
+      213: 4618738236200007157
+    second: odoriko_012
+  - first:
+      213: 8121725941763659423
+    second: tama_001
+  - first:
+      213: -4614514079337149042
+    second: tama_002
+  - first:
+      213: 5474670713232411477
+    second: tama_003
+  - first:
+      213: 5676456746993616793
+    second: tama_004
+  - first:
+      213: -9059217384761133519
+    second: tama_005
+  - first:
+      213: 8866682221929934273
+    second: tama_006
+  - first:
+      213: -3410669119534025227
+    second: tama_007
+  - first:
+      213: -6093024345921496172
+    second: tama_008
+  - first:
+      213: 884447423297473288
+    second: tama_009
+  - first:
+      213: 3290618061348044364
+    second: tama_010
+  - first:
+      213: -9110355602970875610
+    second: tama_011
+  - first:
+      213: 4132692013097300784
+    second: tama_012
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: odoriko_001
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 66
+        width: 22
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102aeac537bcc36f0800000000000000
+      internalID: -703463745440013823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_002
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 209
+        width: 27
+        height: 46
+      alignment: 9
+      pivot: {x: 0.4074074, y: 0.5217391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ebcae59a1bb0e940800000000000000
+      internalID: 5323460482410662881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_003
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 160
+        width: 25
+        height: 47
+      alignment: 9
+      pivot: {x: 0.56, y: 0.5106383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cc346d249a6b720800000000000000
+      internalID: 2861660717768232000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_004
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 18
+        width: 21
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474dfa7b13c8d8c50800000000000000
+      internalID: 6669140768368612468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_005
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 64
+        width: 22
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f18d0e51d376330800000000000000
+      internalID: 3703996382711390015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_006
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 115
+        width: 23
+        height: 45
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259f1e37df0cffe00800000000000000
+      internalID: 1080794630395656530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_007
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 22
+        height: 47
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.4893617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae0116c2bb373040800000000000000
+      internalID: 4627232781159698095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_008
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 66
+        width: 23
+        height: 44
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.52272725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed24f05da36f7ad0800000000000000
+      internalID: -2702331655360336410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_009
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 114
+        width: 23
+        height: 44
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.52272725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29866a22aabcca240800000000000000
+      internalID: 4804438834083686546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_010
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 18
+        width: 18
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6916b51c26b682da0800000000000000
+      internalID: -5969403234184633962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_011
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 210
+        width: 25
+        height: 45
+      alignment: 9
+      pivot: {x: 0.48, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552a7ef20b37ab5d0800000000000000
+      internalID: -3045994997407571371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: odoriko_012
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 210
+        width: 25
+        height: 45
+      alignment: 9
+      pivot: {x: 0.48, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5373764fd091040800000000000000
+      internalID: 4618738236200007157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_001
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 19
+        width: 21
+        height: 47
+      alignment: 9
+      pivot: {x: 0.52380955, y: 0.4893617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96d5e996ba26b070800000000000000
+      internalID: 8121725941763659423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_002
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 208
+        width: 26
+        height: 47
+      alignment: 9
+      pivot: {x: 0.53846157, y: 0.5106383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8d0212c4e3f5ffb0800000000000000
+      internalID: -4614514079337149042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_003
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 161
+        width: 23
+        height: 47
+      alignment: 9
+      pivot: {x: 0.6086956, y: 0.5106383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55bc374f100f9fb40800000000000000
+      internalID: 5474670713232411477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_004
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 111
+        width: 22
+        height: 47
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.4893617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9978c631653d6ce40800000000000000
+      internalID: 5676456746993616793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_005
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 66
+        width: 22
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5217391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 136f44e49c1374280800000000000000
+      internalID: -9059217384761133519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_006
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 16
+        width: 20
+        height: 46
+      alignment: 9
+      pivot: {x: 0.45, y: 0.5217391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cda76ec088cc0b70800000000000000
+      internalID: 8866682221929934273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_007
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 161
+        width: 18
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4893617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5b7cb918edaa0d0800000000000000
+      internalID: -3410669119534025227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_008
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 160
+        width: 23
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49bda8db3aa317ba0800000000000000
+      internalID: -6093024345921496172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_009
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 162
+        width: 23
+        height: 46
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80bc728de30364c00800000000000000
+      internalID: 884447423297473288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_010
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 112
+        width: 18
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4893617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e722e31bf9aad20800000000000000
+      internalID: 3290618061348044364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_011
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 114
+        width: 23
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.51111114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6296e6b09d3819180800000000000000
+      internalID: -9110355602970875610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tama_012
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 68
+        width: 23
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.51111114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03332ce6d754a5930800000000000000
+      internalID: 4132692013097300784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
