@@ -35,13 +35,86 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 103b5b3d78deb2a4fa1dc1669cd9d60b, type: 3}
     - {fileID: 102900000, guid: afd377c14f738774298b2b24e729483c, type: 3}
     - {fileID: 102900000, guid: f59e2f69e93598f42b7b30cf92baa159, type: 3}
-    totalSpriteSurfaceArea: 0
+    - {fileID: 102900000, guid: eb1980701eb57ff448806552ab567dd3, type: 3}
+    - {fileID: 102900000, guid: 39954b982a6d2d54db4ed3232340b33a, type: 3}
+    - {fileID: 102900000, guid: a02c48ae26bb19a40ba57f2d8240e042, type: 3}
+    totalSpriteSurfaceArea: 6439777
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 863cf470bdd4b964d9a8dc41ed65a3b5, type: 3}
+  - {fileID: 21300000, guid: e42db5f0bd63a1748a1ba68dc314f576, type: 3}
+  - {fileID: 21300000, guid: b4fbac02fc9235b4d87b4f4785b90a47, type: 3}
+  - {fileID: 21300000, guid: 7d4c8172a05db8149b0cc19bacfe685d, type: 3}
+  - {fileID: 21300000, guid: 9a71c6a291c92db40bcb334d587f1b32, type: 3}
+  - {fileID: 21300000, guid: ad3353f352b8f884ab9a471ea41d1ac2, type: 3}
+  - {fileID: 21300000, guid: 2051b804db801424eb3f205ae5a4b632, type: 3}
+  - {fileID: 21300000, guid: 67d53ea458adcec498901ee060740ff0, type: 3}
+  - {fileID: 21300000, guid: d2128a15ce3badb4cbb48662bfaf262c, type: 3}
+  - {fileID: 21300000, guid: e501cb35f610b2f409f445c3b6f0f889, type: 3}
+  - {fileID: 21300000, guid: 7676c4954e381624b9f8abc68f2078fe, type: 3}
+  - {fileID: 21300000, guid: 414f42b59c122f645979b14920dd181d, type: 3}
+  - {fileID: 21300000, guid: 856b7ce5c86b03449bd47e5c6d3e99cd, type: 3}
+  - {fileID: 21300000, guid: e12987c6c18f55d42a41bd8911eee164, type: 3}
+  - {fileID: 21300000, guid: 63071637268995f41b428ffb3e05f7aa, type: 3}
+  - {fileID: 21300000, guid: 35cc9ca718952d74abc0e7a81dea8cf6, type: 3}
+  - {fileID: 21300000, guid: 9328a288f0b68e647afcdd51d89c98dd, type: 3}
+  - {fileID: 21300000, guid: 2d2982f82986dd24a84213f828468c4a, type: 3}
+  - {fileID: 21300000, guid: 2801af69487526840aca404afab14e4e, type: 3}
+  - {fileID: 21300000, guid: 391b1c8906c198e4ba6f3bc74fdedff0, type: 3}
+  - {fileID: 21300000, guid: 31c36a2a4f982274ca5d1be506311844, type: 3}
+  - {fileID: 21300000, guid: 447e69daf75f0a448a8507f08bc57fb8, type: 3}
+  - {fileID: 21300000, guid: 2750bd6bbb02a4947a2a91d5c672abef, type: 3}
+  - {fileID: 21300000, guid: 0f5c77db93f99ca4b862cc7b8b5927d5, type: 3}
+  - {fileID: 21300000, guid: 92105bdb98c639f4aa420fa46fef2d3a, type: 3}
+  - {fileID: 21300000, guid: 888e3aace9d2a3c44b9336f440fea496, type: 3}
+  - {fileID: 21300000, guid: e70d0b3d09559bb47afc6630e58a8e40, type: 3}
+  - {fileID: 21300000, guid: 38f963ddd866d0049a0d0abde49a4125, type: 3}
+  - {fileID: 21300000, guid: fff28cedf412bfa45a47af4b73fcd03b, type: 3}
+  - {fileID: 21300000, guid: c08f403e7d3dfe346a3a6c8ac147bdaf, type: 3}
+  - {fileID: 21300000, guid: 42d9c95ead087e94598d4e36b17edb53, type: 3}
+  - {fileID: 21300000, guid: d0dff8beffc4c9942b2bc5c6157062f6, type: 3}
+  - {fileID: 21300000, guid: ca95593fcdf985a48983310ca013ae68, type: 3}
+  - {fileID: 21300000, guid: 7d83c8cfabd29b54aaf69f6eb142f011, type: 3}
+  - {fileID: 21300000, guid: 566eabdf68c83ac469839552ca81e0d5, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - point
+  - "\u30E1\u30AB\u4E09\u53F7\uFF10\uFF11"
+  - "\u30E1\u30AB\u4E09\u53F7\uFF10\uFF11 1 (1)"
+  - "\u91D1\u5C5E\u677F"
+  - "\u30C1\u30C3\u30D7"
+  - "\u30E1\u30AB\u56DB\u53F7\uFF10\uFF11"
+  - car_trailer_house
+  - "\u30E1\u30AB\u4E09\u53F7\uFF10\uFF11 3"
+  - "\u30D0\u30C3\u30C6\u30EA\u30FC"
+  - tamaf
+  - car_dekotora
+  - "\u30E1\u30AB\u4E00\u53F7\uFF10\uFF11"
+  - "\u9283"
+  - "\u30C7\u30A3\u30B9\u30AF"
+  - car_scrap_koujou_haisyaokiba
+  - "\u71C3\u6599\u30BF\u30F3\u30AF"
+  - "\u5F3E\u85AC"
+  - point_b
+  - kouhai_city
+  - gas_station
+  - mA_pl1_001
+  - "\u30E1\u30AB\u4E00\u53F7\uFF10\uFF11 1"
+  - "\u30E1\u30AB\u4E09\u53F7\uFF10\uFF11 1"
+  - doukutsu
+  - beach_sunayama
+  - "\u30E1\u30AB\u4E09\u53F7\uFF10\uFF11 2"
+  - "\u30E1\u30AB\u4E00\u53F7\uFF10\uFF11 3"
+  - "\u30E1\u30AB\u56DB\u53F7\uFF10\uFF11 1"
+  - "\u304A\u672D\u91D1\u584A"
+  - "\u30E1\u30AB\u4E00\u53F7\uFF10\uFF11 2"
+  - "\u30E1\u30AB\u56DB\u53F7\uFF10\uFF11 2"
+  - "\u624B\u914D\u66F8"
+  - "\u30E1\u30AB\u56DB\u53F7\uFF10\uFF11 3"
+  - tatemono_bar
+  - bg_machi_seiyou
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0

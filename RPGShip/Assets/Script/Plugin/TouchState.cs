@@ -106,7 +106,10 @@ public class TouchState : MonoBehaviour
         else
         {
             touchTimer = 0.0f;
-            joyStick.active = false;
+            if (joyStick != null)
+            {
+                joyStick.active = false;
+            }
         }
     }
 

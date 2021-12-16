@@ -85,6 +85,7 @@
     <Compile Include="Assets\Script\Chara\CharaAnime.cs" />
     <Compile Include="Assets\Script\System\ContentPartsHolder.cs" />
     <Compile Include="Assets\Scriptable\List\MaterialDataBaseEditor.cs" />
+    <Compile Include="Assets\Script\System\ShipContentManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\system\codeandweb.com\Readme.txt" />
