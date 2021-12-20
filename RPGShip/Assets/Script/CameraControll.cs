@@ -10,8 +10,8 @@ public class CameraControll : MonoBehaviour
 
     //[SerializeField]
     //private CinemachineVirtualCamera virtualCamera;
-    [SerializeField]
-    private CinemachineConfiner cinemachineCOnfiner;
+    //[SerializeField]
+    //private CinemachineConfiner cinemachineCOnfiner;
     //追尾ターゲット
     [SerializeField]
     private Transform targetTransform;
@@ -31,10 +31,12 @@ public class CameraControll : MonoBehaviour
             virtualCamera = this.GetComponent<CinemachineVirtualCamera>();
         }
         */
+        /*
         if (cinemachineCOnfiner == null)
         {
             cinemachineCOnfiner = this.GetComponent<CinemachineConfiner>();
         }
+        */
 
     }
 
@@ -44,7 +46,10 @@ public class CameraControll : MonoBehaviour
         //ターゲットがあれば追尾
         if (targetTransform != null)
         {
-            cameraTransform.position = new Vector3(targetTransform.position.x, targetTransform.position.y, this.transform.position.z);
+            cameraTransform.position = new Vector3(
+                Mathf.Max(0, targetTransform.position.x),
+                Mathf.Max(0, targetTransform.position.y),
+                this.transform.position.z);
         }
     }
 
@@ -80,11 +85,11 @@ public class CameraControll : MonoBehaviour
         targetTransform = null;
         //virtualCamera.LookAt = null;
     }
-
+    /*
     //カメラ移動制限コライダーのターゲットを設定
     public void setCameraBound(CompositeCollider2D colider)
     {
         cinemachineCOnfiner.m_BoundingShape2D = colider;
     }
-
+    */
 }

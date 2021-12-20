@@ -19,7 +19,11 @@ public class ShipContentManager : MonoBehaviour
     //public NavMeshSurface2d naviSurface;
     //////////////////////////////////////////オブジェクト//////////////////////////////////////////
     //プレイヤー
-    public GameObject PlayerObj;
+    public GameObject playerObj;
+    //プレイヤーマップ位置
+    public PlayerPoint playerMapPoint;
+    //スタート位置
+    public MapPoint nowMapPoint;
     //カメラコントローラー
     public CameraControll cameraController;
     //マップレイヤー
@@ -64,7 +68,6 @@ public class ShipContentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -107,6 +110,7 @@ public class ShipContentManager : MonoBehaviour
         screenManager.changeColor(Color.black, 0.7f, "changeMap");
     }
 
+    /*
     //マップ変更処理
     public void changeMap()
     {
@@ -127,14 +131,15 @@ public class ShipContentManager : MonoBehaviour
         //フェードアウト
         screenManager.changeColor(Color.clear, 0.7f, "changeMapEnd");
     }
-
+    */
+    /*
     //マップ変更終了
     public void changeMapEnd()
     {
         //naviSurface.BuildNavMesh();
         eventEnd();
     }
-
+    */
 
 
     //複数アクション中状態取得

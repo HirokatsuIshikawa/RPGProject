@@ -45,7 +45,8 @@ public class TouchState : MonoBehaviour
         if (Application.isEditor)
         {
             //ジョイスティック以外のUI上ではない場合
-            if (EventSystem.current.IsPointerOverGameObject() == false || joyStick.active)
+            //if (EventSystem.current.IsPointerOverGameObject() == false || joyStick.active)
+            if (EventSystem.current.IsPointerOverGameObject() == false)
             {
                 // 押した瞬間
                 if (Input.GetMouseButtonDown(0))
@@ -153,12 +154,12 @@ public class TouchState : MonoBehaviour
         List<RaycastResult> result = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, result);
 
-        if(result.Count == 0)
+        if (result.Count == 0)
         {
             return true;
         }
         //ジョイスティックに当たってたら
-        else if(result[0].gameObject.CompareTag("JoyStick"))
+        else if (result[0].gameObject.CompareTag("JoyStick"))
         {
             return true;
         }

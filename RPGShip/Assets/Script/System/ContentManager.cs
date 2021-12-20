@@ -122,7 +122,7 @@ public class ContentManager : MonoBehaviour
         playerAnime.charaDirection = changeMapDirection;
         playerAnime.ChangeDirection();
         //カメラ可動範囲の当たり判定を設定
-        cameraController.setCameraBound(MapObj.GetComponent<CompositeCollider2D>());
+        //cameraController.setCameraBound(MapObj.GetComponent<CompositeCollider2D>());
         //フェードアウト
         screenManager.changeColor(Color.clear, 0.7f, "changeMapEnd");
     }

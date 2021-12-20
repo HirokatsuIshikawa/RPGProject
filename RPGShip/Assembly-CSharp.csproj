@@ -84,8 +84,10 @@
     <Compile Include="Assets\system\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Script\Chara\CharaAnime.cs" />
     <Compile Include="Assets\Script\System\ContentPartsHolder.cs" />
-    <Compile Include="Assets\Scriptable\List\MaterialDataBaseEditor.cs" />
     <Compile Include="Assets\Script\System\ShipContentManager.cs" />
+    <Compile Include="Assets\Scriptable\List\MaterialDataBaseEditor.cs" />
+    <Compile Include="Assets\Script\MapPoint.cs" />
+    <Compile Include="Assets\Script\PlayerPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\system\codeandweb.com\Readme.txt" />
