@@ -1,8 +1,8 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerAnime : CharaAnime
 {
-    //ƒWƒ‡ƒCƒXƒeƒBƒbƒN
+    //ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯
     public FloatingJoystick joystick;
     public BoxCollider2D eventCollider;
     // Start is called before the first frame update
@@ -16,15 +16,15 @@ public class PlayerAnime : CharaAnime
     // Update is called once per frame
     void Update()
     {
-        //ƒCƒxƒ“ƒg’†‚ÍÀs‚µ‚È‚¢
+        //ã‚¤ãƒ™ãƒ³ãƒˆä¸­ã¯å®Ÿè¡Œã—ãªã„
         if (ContentManager.instance.isActioning())
         {
             return;
         }
-        //ƒL[ƒ{[ƒh‚©‚ç“ü—Í•ûŒü‚ğæ“¾
+        //ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰å…¥åŠ›æ–¹å‘ã‚’å–å¾—
         inputAxis.x = Input.GetAxis("Horizontal");
         inputAxis.y = Input.GetAxis("Vertical");
-        //“ü—Í‚µ‚Ä‚È‚¢ê‡‚ÍƒWƒ‡ƒCƒXƒeƒBƒbƒN‚©‚çæ“¾
+        //å…¥åŠ›ã—ã¦ãªã„å ´åˆã¯ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯ã‹ã‚‰å–å¾—
         if (inputAxis.x == 0)
         {
             inputAxis.x = joystick.Horizontal;
@@ -64,10 +64,10 @@ public class PlayerAnime : CharaAnime
 
     protected new void Clamp()
     {
-        // ‰æ–Ê¶‰º‚Ìƒ[ƒ‹ƒhÀ•W‚ğƒrƒ…[ƒ|[ƒg‚©‚çæ“¾
+        // ç”»é¢å·¦ä¸‹ã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‹ã‚‰å–å¾—
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
-        // ‰æ–Ê‰Eã‚Ìƒ[ƒ‹ƒhÀ•W‚ğƒrƒ…[ƒ|[ƒg‚©‚çæ“¾
+        // ç”»é¢å³ä¸Šã®ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’ãƒ“ãƒ¥ãƒ¼ãƒãƒ¼ãƒˆã‹ã‚‰å–å¾—
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
 
         Vector3 pos = transform.position;

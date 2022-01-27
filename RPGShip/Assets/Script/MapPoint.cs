@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,13 +20,16 @@ public class MapPoint : MonoBehaviour
 
     public void TouchPoint()
     {
-        ShipContentManager.instance.playerMapPoint.transform.position = 
+        ContentManager.instance.SetMapMenu(true, this);
+        /*
+        ContentManager.instance.playerMapPoint.transform.position = 
             new Vector3(
                 this.transform.position.x, 
                 this.transform.position.y, 
-                ShipContentManager.instance.playerMapPoint.transform.position.z
+                ContentManager.instance.playerMapPoint.transform.position.z
                 );
-        Debug.Log("ó£ÇµÇΩèuä‘2");
+        Debug.Log("Èõ¢„Åó„ÅüÁû¨Èñì2");
+        */
     }
 
 

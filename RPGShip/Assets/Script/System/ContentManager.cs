@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -8,45 +8,58 @@ public class ContentManager : MonoBehaviour
 {
     static public ContentManager instance;
 
-    //////////////////////////////////////////ƒ}ƒl[ƒWƒƒ[//////////////////////////////////////////
-    //ƒƒbƒZ[ƒW
+    public enum SystemProcess
+    {
+        None,
+        Menu,
+        Talk,
+        ChangeMap
+    }
+
+    //////////////////////////////////////////ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼//////////////////////////////////////////
+    //ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
     public MessageManager messageManager;
-    //‰æ–ÊƒV[ƒgˆ—
+    //ç”»é¢ã‚·ãƒ¼ãƒˆå‡¦ç†
     public ScreenManager screenManager;
-    //ƒ^ƒbƒ`ƒXƒe[ƒg
+    //ã‚¿ãƒƒãƒã‚¹ãƒ†ãƒ¼ãƒˆ
     public TouchState touchState;
-    //ƒiƒrƒƒbƒVƒ…Ä‚«
+    //ãƒŠãƒ“ãƒ¡ãƒƒã‚·ãƒ¥ç„¼ã
     //public NavMeshSurface2d naviSurface;
-    //////////////////////////////////////////ƒIƒuƒWƒFƒNƒg//////////////////////////////////////////
-    //ƒvƒŒƒCƒ„[
-    public GameObject PlayerObj;
-    //ƒJƒƒ‰ƒRƒ“ƒgƒ[ƒ‰[
+    //////////////////////////////////////////ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ//////////////////////////////////////////
+    //ãƒãƒƒãƒ—
+    public Map map;
+    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒãƒƒãƒ—ä½ç½®
+    public PlayerPoint playerMapPoint;
+    //ã‚¹ã‚¿ãƒ¼ãƒˆä½ç½®
+    public MapPoint nowMapPoint;
+    //ç§»å‹•å…ˆ
+    public MapPoint nextMapPoint;
+    //
+    public List<MapPoint> mapPointList;
+    //
+    public LineRenderer mapLine;
+    //ãƒãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼
+    public MapMenu mapMenu;
+    //ã¯ã„ã„ã„ãˆãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—
+    public AskPopup askPopup;
+
+    //ã‚«ãƒ¡ãƒ©ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼
     public CameraControll cameraController;
-    //ƒ}ƒbƒvƒŒƒCƒ„[
-    public Transform MapLayer;
-    //ƒ}ƒbƒv
-    public GameObject MapObj;
-    //ƒƒbƒZ[ƒWƒEƒBƒ“ƒhƒE
+    //ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
     public MessageWindow messageWindow;
-    //ˆÃ–‹
+    //æš—å¹•
     public Image darkField;
-    //ƒCƒxƒ“ƒg’†ƒtƒ‰ƒO
-    public bool nowEventFlg = false;
-    //ƒCƒxƒ“ƒg—ÌˆæÚGƒtƒ‰ƒOAˆÚ“®’¼Œã‚È‚Ç‚ÉˆÚ“®‚µ‚È‚¢‚æ‚¤
-    public bool eventAreaEntryFlg = false;
-    //Œ»İ‚ÌƒCƒxƒ“ƒg
-    public EventObject.EventType nowEventType;
-    //ƒAƒNƒVƒ‡ƒ“—â‹pŠÔ
+    public Image backDarkField;
+    //ã‚¤ãƒ™ãƒ³ãƒˆä¸­ãƒ•ãƒ©ã‚°
+    public SystemProcess process = SystemProcess.None;
+    //ã‚¢ã‚¯ã‚·ãƒ§ãƒ³å†·å´æ™‚é–“
     public float actionCoolTime = 0.0f;
 
-    //ƒ}ƒbƒv•ÏXİ’è
+    //ãƒãƒƒãƒ—å¤‰æ›´è¨­å®š
     private string changeMapName;
     private Vector2 changeMapPos;
     private CharaAnime.DIRECTION changeMapDirection;
-
-    //ƒƒjƒ…[ƒtƒ‰ƒO
-    public bool menuFlg = false;
-
+    
     void Awake()
     {
         if (instance == null)
@@ -61,23 +74,31 @@ public class ContentManager : MonoBehaviour
         Screen.SetResolution(540, 960, false);
         Application.targetFrameRate = 60;
     }
+
     // Start is called before the first frame update
     void Start()
     {
+        cameraController.SetTargetPos(playerMapPoint.transform);
+        //mapLine = new LineRenderer();
+        mapLine.positionCount = mapPointList.Count;
+
+        for (int i = 0; i < mapPointList.Count; i++)
+        {
+            mapLine.SetPosition(i, mapPointList[i].transform.position);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ƒCƒxƒ“ƒg’†
+        //ã‚¤ãƒ™ãƒ³ãƒˆä¸­
         if (isActioning())
         {
-            switch (nowEventType)
+            switch (process)
             {
-                case EventObject.EventType.Talk:
+                case SystemProcess.Talk:
                     messageManager.talkUpdate();
-                    break;
-                case EventObject.EventType.Move:
                     break;
             }
         }
@@ -92,102 +113,64 @@ public class ContentManager : MonoBehaviour
         }
     }
 
-    //ƒ}ƒbƒvˆÚ“®ŠJn
+    //ãƒãƒƒãƒ—ç§»å‹•é–‹å§‹
     public void changeMapStart(string mapName, Vector2 mapPos, CharaAnime.DIRECTION direction)
     {
-        //ƒCƒxƒ“ƒgƒtƒ‰ƒO
-        nowEventFlg = true;
-        nowEventType = EventObject.EventType.Move;
-        //•ÏXŒãİ’è
+        //ãƒ—ãƒ­ã‚»ã‚¹ãƒ»ãƒãƒƒãƒ—å¤‰æ›´
+        process = SystemProcess.ChangeMap;
+        //å¤‰æ›´å¾Œè¨­å®š
         changeMapName = mapName;
         changeMapPos = mapPos;
         changeMapDirection = direction;
-        //ƒtƒF[ƒhƒCƒ“
+        //ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³
         screenManager.changeColor(Color.black, 0.7f, "changeMap");
     }
 
-    //ƒ}ƒbƒv•ÏXˆ—
-    public void changeMap()
-    {
-        //ƒ}ƒbƒv·‚µ‘Ö‚¦
-        GameObject obj = Instantiate(Resources.Load<GameObject>(changeMapName), MapLayer);
-        Destroy(MapObj);
-        MapObj = obj;
-        MapObj.SetActive(true);
-        //ƒvƒŒƒCƒ„[ˆÊ’uEŒü‚«İ’è
-        PlayerAnime playerAnime = PlayerObj.GetComponent<PlayerAnime>();
-        playerAnime.rigidBody.velocity = Vector2.zero;
-        playerAnime.inputAxis = Vector2.zero;
-        PlayerObj.transform.localPosition = new Vector3(changeMapPos.x, changeMapPos.y, 0);
-        playerAnime.charaDirection = changeMapDirection;
-        playerAnime.ChangeDirection();
-        //ƒJƒƒ‰‰Â“®”ÍˆÍ‚Ì“–‚½‚è”»’è‚ğİ’è
-        //cameraController.setCameraBound(MapObj.GetComponent<CompositeCollider2D>());
-        //ƒtƒF[ƒhƒAƒEƒg
-        screenManager.changeColor(Color.clear, 0.7f, "changeMapEnd");
-    }
-
-    //ƒ}ƒbƒv•ÏXI—¹
-    public void changeMapEnd()
-    {
-        //naviSurface.BuildNavMesh();
-        eventEnd();
-    }
-
-
-
-    //•¡”ƒAƒNƒVƒ‡ƒ“’†ó‘Ôæ“¾
+    //è¤‡æ•°ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ä¸­çŠ¶æ…‹å–å¾—
     public bool isActioning()
     {
-        return nowEventFlg || menuFlg;
+        return process != SystemProcess.None;
     }
+    
 
-    //ƒCƒxƒ“ƒg’†ó‘Ôæ“¾
-    public bool isEventing()
-    {
-        return nowEventFlg;
-    }
-
-    //ƒCƒxƒ“ƒgŠJn
+    //ã‚¤ãƒ™ãƒ³ãƒˆé–‹å§‹
     public void eventStart(List<string> msg)
     {
-        messageManager.messageList = msg;
-        nowEventType = EventObject.EventType.Talk;
+        messageManager.setMessageList(msg);
+        process = SystemProcess.Talk;
         messageManager.messageStart();
     }
 
-    //ƒCƒxƒ“ƒgI—¹
+    //ã‚¤ãƒ™ãƒ³ãƒˆçµ‚äº†
     public void eventEnd()
     {
-        nowEventFlg = false;
-        nowEventType = EventObject.EventType.None;
+        process = SystemProcess.None;
         actionCoolTime = 0.3f;
     }
 
-    //iTween—pƒƒbƒZ[ƒWƒZƒbƒg
+    //iTweenç”¨ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚»ãƒƒãƒˆ
     private void SetMessage(int num)
     {
         messageManager.setMessageNum(num);
     }
 
-    //ƒƒbƒZ[ƒW“Ç‚İI‚í‚è
+    //ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸èª­ã¿çµ‚ã‚ã‚Š
     private void compMessage()
     {
         messageManager.compMessage();
     }
 
-
-    //ˆÃ–‹ƒZƒbƒg
+    //æš—å¹•ã‚»ãƒƒãƒˆ
     private void SetValue(float alpha)
     {
-        // iTween‚ÅŒÄ‚Î‚ê‚½‚çAó‚¯æ‚Á‚½’l‚ğImage‚ÌƒAƒ‹ƒtƒ@’l‚ÉƒZƒbƒg
+        // iTweenã§å‘¼ã°ã‚ŒãŸã‚‰ã€å—ã‘å–ã£ãŸå€¤ã‚’Imageã®ã‚¢ãƒ«ãƒ•ã‚¡å€¤ã«ã‚»ãƒƒãƒˆ
         darkField.color = new Color(0, 0, 0, alpha);
     }
 
-    //FˆÃ–‹
+    //è‰²æš—å¹•
     private void SetValue(Color color)
     {
-        // iTween‚ÅŒÄ‚Î‚ê‚½‚çAó‚¯æ‚Á‚½’l‚ğImage‚ÌƒAƒ‹ƒtƒ@’l‚ÉƒZƒbƒg
+        // iTweenã§å‘¼ã°ã‚ŒãŸã‚‰ã€å—ã‘å–ã£ãŸå€¤ã‚’Imageã®ã‚¢ãƒ«ãƒ•ã‚¡å€¤ã«ã‚»ãƒƒãƒˆ
         darkField.color = color;
     }
 
@@ -200,6 +183,46 @@ public class ContentManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
+
+    public void SetMapMenu(bool flg, MapPoint point = null)
+    {
+        backDarkField.gameObject.SetActive(flg);
+        mapMenu.SetButtonEnable(point, nowMapPoint);
+        mapMenu.gameObject.SetActive(flg);
+    }
+
+    //ãƒãƒƒãƒ—ç§»å‹•
+
+
+    public void MovePoint()
+    {
+        cameraController.setTarget(playerMapPoint.transform);
+        float distance = Vector3.Distance(nowMapPoint.transform.position, mapMenu.selectMapPoint.transform.position);
+        iTween.MoveTo(playerMapPoint.gameObject, iTween.Hash(
+            "x", mapMenu.selectMapPoint.transform.position.x,
+            "y", mapMenu.selectMapPoint.transform.position.y,
+            "oncomplete", "MoveEnd",
+            "oncompletetarget", this.gameObject,
+            "time", distance,
+            "easetype", iTween.EaseType.linear
+            ));
+        nextMapPoint = mapMenu.selectMapPoint;
+        SetMapMenu(false);
+        askPopup.ClearEvent();
+        askPopup.gameObject.SetActive(false);
+        nowMapPoint = null;
+
+    }
+
+    public void MoveEnd()
+    {
+        cameraController.clearTarget();
+        nowMapPoint = nextMapPoint;
+        nextMapPoint = null;
+    }
+
+
 
 
 }

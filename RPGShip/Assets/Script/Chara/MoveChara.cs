@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveChara : MonoBehaviour
@@ -25,7 +25,7 @@ public class MoveChara : MonoBehaviour
     {
     }
 
-    //ƒ^[ƒQƒbƒgİ’èE•¨‘Ì
+    //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆè¨­å®šãƒ»ç‰©ä½“
     public void setTarget(Transform obj)
     {
         targetList.Clear();
@@ -34,7 +34,7 @@ public class MoveChara : MonoBehaviour
         chaseType = CHASE_TYPE.OBJ;
     }
 
-    //ƒ^[ƒQƒbƒgİ’èE•¨‘ÌƒŠƒXƒg
+    //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆè¨­å®šãƒ»ç‰©ä½“ãƒªã‚¹ãƒˆ
     public void setTarget(List<Transform> objList)
     {
         targetList.Clear();
@@ -43,7 +43,7 @@ public class MoveChara : MonoBehaviour
         chaseType = CHASE_TYPE.OBJ;
     }
 
-    //ƒ^[ƒQƒbƒgİ’èEˆÊ’uƒŠƒXƒg
+    //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆè¨­å®šãƒ»ä½ç½®ãƒªã‚¹ãƒˆ
     public void setTarget(List<Vector3> pos)
     {
         targetPosList.Clear();
@@ -51,7 +51,7 @@ public class MoveChara : MonoBehaviour
         targetIndex = 0;
         chaseType = CHASE_TYPE.POS;
     }
-    //ƒ^[ƒQƒbƒgİ’èEˆÊ’u
+    //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆè¨­å®šãƒ»ä½ç½®
     public void setTarget(Vector3 pos)
     {
         targetPosList.Clear();
@@ -61,7 +61,7 @@ public class MoveChara : MonoBehaviour
     }
 
 
-    //ƒ‹[ƒgİ’èEˆÊ’uƒŠƒXƒg
+    //ãƒ«ãƒ¼ãƒˆè¨­å®šãƒ»ä½ç½®ãƒªã‚¹ãƒˆ
     public void setTargetRoot(List<Vector3> pos)
     {
         targetPosList = pos;
@@ -69,7 +69,7 @@ public class MoveChara : MonoBehaviour
         chaseType = CHASE_TYPE.ROOT;
     }
     
-    //ƒ‹[ƒgİ’èE•¨‘ÌƒŠƒXƒg
+    //ãƒ«ãƒ¼ãƒˆè¨­å®šãƒ»ç‰©ä½“ãƒªã‚¹ãƒˆ
     public void setTargetRoot(List<Transform> objList)
     {
         targetList.Clear();
@@ -95,13 +95,13 @@ public class MoveChara : MonoBehaviour
         {
             targetNowPos = targetList[targetIndex].position;
         }
-        //Œ»İ‚Ì‹——£
+        //ç¾åœ¨ã®è·é›¢
         now = Vector2.Distance(transform.position, targetNowPos);
         if (distance < now)
         {
-            //–Ú“I’n‚ğİ’èEˆÚ“®
+            //ç›®çš„åœ°ã‚’è¨­å®šãƒ»ç§»å‹•
             Vector2 vector = targetNowPos - transform.position;            
-            //•ûŒüæ“¾
+            //æ–¹å‘å–å¾—
             //Vector3 vector = transform.position - beforePos;
             anime.inputAxis = vector.normalized;
         }

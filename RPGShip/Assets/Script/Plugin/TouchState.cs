@@ -55,6 +55,7 @@ public class TouchState : MonoBehaviour
                     this._touchFlag = true;
                     this._touchPhase = TouchPhase.Began;
                     Debug.Log("押した瞬間");
+                    ContentManager.instance.map.OnMouseDown();
                 }
 
                 // 離した瞬間
@@ -63,6 +64,7 @@ public class TouchState : MonoBehaviour
                     this._touchFlag = true;
                     this._touchPhase = TouchPhase.Ended;
                     Debug.Log("離した瞬間");
+                    ContentManager.instance.map.OnMouseUp();
                 }
 
                 // 押しっぱなし
@@ -71,6 +73,7 @@ public class TouchState : MonoBehaviour
                     this._touchFlag = true;
                     this._touchPhase = TouchPhase.Moved;
                     //Debug.Log("押しっぱなし");
+                    ContentManager.instance.map.OnMouseDrag();
                 }
 
                 // 座標取得

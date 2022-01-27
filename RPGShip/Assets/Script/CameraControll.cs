@@ -1,26 +1,26 @@
-using Cinemachine;
+ï»¿using Cinemachine;
 using System.Collections;
 using UnityEngine;
 
-//ƒJƒƒ‰ƒRƒ“ƒgƒ[ƒ‰[
+//ã‚«ãƒ¡ãƒ©ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼
 public class CameraControll : MonoBehaviour
 {
-    //ƒƒCƒ“ƒJƒƒ‰
+    //ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©
     public Transform cameraTransform;
 
     //[SerializeField]
     //private CinemachineVirtualCamera virtualCamera;
     //[SerializeField]
     //private CinemachineConfiner cinemachineCOnfiner;
-    //’Ç”öƒ^[ƒQƒbƒg
+    //è¿½å°¾ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
     [SerializeField]
     private Transform targetTransform;
-    //•ÏXŒã’Ç”öƒ^[ƒQƒbƒg
+    //å¤‰æ›´å¾Œè¿½å°¾ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ
     private Transform changeTargetTransform;
     // Start is called before the first frame update
     void Start()
     {
-        //ƒJƒƒ‰‚ª‚È‚¢ê‡‚ÍŒ»İ‚Ì‚à‚Ì‚©‚çæ“¾
+        //ã‚«ãƒ¡ãƒ©ãŒãªã„å ´åˆã¯ç¾åœ¨ã®ã‚‚ã®ã‹ã‚‰å–å¾—
         if (cameraTransform == null)
         {
             cameraTransform = this.transform;
@@ -43,7 +43,7 @@ public class CameraControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ƒ^[ƒQƒbƒg‚ª‚ ‚ê‚Î’Ç”ö
+        //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆãŒã‚ã‚Œã°è¿½å°¾
         if (targetTransform != null)
         {
             cameraTransform.position = new Vector3(
@@ -86,10 +86,21 @@ public class CameraControll : MonoBehaviour
         //virtualCamera.LookAt = null;
     }
     /*
-    //ƒJƒƒ‰ˆÚ“®§ŒÀƒRƒ‰ƒCƒ_[‚Ìƒ^[ƒQƒbƒg‚ğİ’è
+    //ã‚«ãƒ¡ãƒ©ç§»å‹•åˆ¶é™ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã®ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’è¨­å®š
     public void setCameraBound(CompositeCollider2D colider)
     {
         cinemachineCOnfiner.m_BoundingShape2D = colider;
     }
     */
+
+
+    public void SetTargetPos(Transform transform)
+    {
+        cameraTransform.position = new Vector3(
+            Mathf.Max(0, transform.position.x),
+            Mathf.Max(0, transform.position.y),
+            this.transform.position.z
+            );
+    }
+
 }

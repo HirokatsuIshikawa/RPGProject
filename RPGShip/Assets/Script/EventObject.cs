@@ -1,23 +1,16 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 public class EventObject : MonoBehaviour
 {
     public enum EventStartType
     {
-        None,       //‹N“®‚µ‚È‚¢
-        Auto,       //“¯ƒ}ƒbƒv‚É‘¶İ‚µ‚½‚ç©“®Às
-        Entry,      //“–‚½‚è”»’è‚Éi“ü
-        Tap,        //“–‚½‚è”»’è‚ª“–‚½‚Á‚Ä‚¢‚é‚Æ‚«‚Éƒ^ƒbƒv
-        InMap,      //ƒ}ƒbƒvŠJn
-        Trigger     //ŠO•”‚©‚ç‚ÌƒgƒŠƒK[
-    }
-
-    public enum EventType
-    {
-        None,
-        Talk,
-        Move
+        None,       //èµ·å‹•ã—ãªã„
+        Auto,       //åŒãƒãƒƒãƒ—ã«å­˜åœ¨ã—ãŸã‚‰è‡ªå‹•å®Ÿè¡Œ
+        Entry,      //å½“ãŸã‚Šåˆ¤å®šã«é€²å…¥
+        Tap,        //å½“ãŸã‚Šåˆ¤å®šãŒå½“ãŸã£ã¦ã„ã‚‹ã¨ãã«ã‚¿ãƒƒãƒ—
+        InMap,      //ãƒãƒƒãƒ—é–‹å§‹æ™‚
+        Trigger     //å¤–éƒ¨ã‹ã‚‰ã®ãƒˆãƒªã‚¬ãƒ¼
     }
     
     public EventStartType eventStartType = EventStartType.Tap;
@@ -38,34 +31,8 @@ public class EventObject : MonoBehaviour
 
     public void eventStart()
     {
-        ContentManager.instance.nowEventFlg = true;
+        ContentManager.instance.process = ContentManager.SystemProcess.Talk;
         ContentManager.instance.eventStart(msg);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(gameObject.name + " : " + "TalkTrigger");
-        if(eventStartType == EventStartType.Entry)
-        {
-            if (ContentManager.instance.isEventing())
-            {
-                ContentManager.instance.eventAreaEntryFlg = true;
-                return;
-            }
-            else
-            {
-                if (ContentManager.instance.eventAreaEntryFlg == false)
-                {
-                    ContentManager.instance.eventAreaEntryFlg = true;
-                    eventStart();
-                }
-            }
-        }
-    }
     
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Debug.Log(gameObject.name + " : " + "TalkTriggerExit");
-        ContentManager.instance.eventAreaEntryFlg = false;
-    }
 }

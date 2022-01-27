@@ -1,34 +1,22 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class ContentPartsHolder : MonoBehaviour
 {
-
-    //ƒvƒŒƒCƒ„[
-    public GameObject PlayerObj;
-    //ƒJƒƒ‰ƒRƒ“ƒgƒ[ƒ‰[
+    //ã‚«ãƒ¡ãƒ©ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼
     public CameraControll cameraController;
-    //ƒ}ƒbƒvƒŒƒCƒ„[
-    public Transform MapLayer;
-    //ƒ}ƒbƒv
-    public GameObject MapObj;
-    //ƒƒbƒZ[ƒWƒEƒBƒ“ƒhƒE
+    //ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦
     public MessageWindow messageWindow;
-    //ˆÃ–‹
+    //æš—å¹•
     public Image darkField;
-
-    public FloatingJoystick joyStick;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        ContentManager.instance.PlayerObj = PlayerObj;
+        //ContentManager.instance.PlayerObj = PlayerObj;
         ContentManager.instance.cameraController = cameraController;
-        ContentManager.instance.MapLayer = MapLayer;
-        ContentManager.instance.MapObj = MapObj;
         ContentManager.instance.messageWindow = messageWindow;
         ContentManager.instance.darkField = darkField;
-        ContentManager.instance.touchState.joyStick = joyStick;
         ContentManager.instance.touchState.enabled = true;
         ContentManager.instance.screenManager = new ScreenManager(darkField);
         ContentManager.instance.messageManager = new MessageManager(messageWindow);

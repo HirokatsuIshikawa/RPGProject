@@ -1,8 +1,8 @@
-#if UNITY_EDITOR
+ï»¿#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(PlayerAnime))]//Šg’£‚·‚éƒNƒ‰ƒX‚ğw’è
+[CustomEditor(typeof(PlayerAnime))]//æ‹¡å¼µã™ã‚‹ã‚¯ãƒ©ã‚¹ã‚’æŒ‡å®š
 public class PlayerAnimeEditor : CharaAnimeEditor
 {
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using static EventObject;
 
 public class TalkAction : MonoBehaviour
@@ -18,18 +18,18 @@ public class TalkAction : MonoBehaviour
         {
             return;
         }
-        if(ContentManager.instance.nowEventType != EventObject.EventType.None)
+        if(ContentManager.instance.process != ContentManager.SystemProcess.None)
         {
             return;
         }
         /*
-        //‰æ–Êƒ^ƒbƒv‚Ì‘€ì
-        //UI‚É“–‚½‚Á‚½‚çƒXƒNƒ[ƒ‹‚µ‚È‚¢
+        //ç”»é¢ã‚¿ãƒƒãƒ—æ™‚ã®æ“ä½œ
+        //UIã«å½“ãŸã£ãŸã‚‰ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ãªã„
         if (Input.touchCount >= 1)
         {
             if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
             {
-                //‰æ–Êƒ^ƒbƒv‚µ‚½‚Æ‚«
+                //ç”»é¢ã‚¿ãƒƒãƒ—ã—ãŸã¨ã
                 if (Input.GetMouseButtonDown(0))
                 {
 
@@ -37,7 +37,7 @@ public class TalkAction : MonoBehaviour
             }
         }
         */
-        //‰æ–Êƒ^ƒbƒv‚Ì‘€ì
+        //ç”»é¢ã‚¿ãƒƒãƒ—æ™‚ã®æ“ä½œ
         if (TouchState.instance.getTouchEndedSoon())
         {
             if(eventObj != null)

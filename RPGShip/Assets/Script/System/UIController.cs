@@ -12,14 +12,14 @@ public class UIController : MonoBehaviour
     {
         MenuObject.SetActive(true);
         openMenuButton.gameObject.SetActive(false);
-        ContentManager.instance.menuFlg = true;
+        ContentManager.instance.process = ContentManager.SystemProcess.Menu;
     }
 
     public void ButtonCloseMenu()
     {
         MenuObject.SetActive(false);
         openMenuButton.gameObject.SetActive(true);
-        ContentManager.instance.menuFlg = false;
+        ContentManager.instance.process = ContentManager.SystemProcess.None;
     }
 
 }

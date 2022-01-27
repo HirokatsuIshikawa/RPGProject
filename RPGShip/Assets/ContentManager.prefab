@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3027190273949228034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3027190273949228044}
+  - component: {fileID: 3027190273949228035}
+  - component: {fileID: 3027190273949228045}
+  m_Layer: 0
+  m_Name: ContentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3027190273949228044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027190273949228034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.6325603, y: 7.1629314, z: -1.6695397}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3027190273949228035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027190273949228034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752624946af0a2249b254f32f0717c33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageManager:
+    messageWindow: {fileID: 0}
+    messageList: []
+    messageSpeed: 0
+  touchState: {fileID: 3027190273949228045}
+  playerMapPoint: {fileID: 0}
+  nowMapPoint: {fileID: 0}
+  cameraController: {fileID: 0}
+  messageWindow: {fileID: 0}
+  darkField: {fileID: 0}
+  nowEventFlg: 0
+  nowEventType: 0
+  actionCoolTime: 0
+  menuFlg: 0
+--- !u!114 &3027190273949228045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027190273949228034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9621d00f7ebd0c3479ad789026fda130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joyStick: {fileID: 0}
+  _touchFlag: 0
+  _touchPosition: {x: 0, y: 0}
+  _touchPhase: 0
+  touchTimer: 0

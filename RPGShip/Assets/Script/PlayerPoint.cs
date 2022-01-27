@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +9,8 @@ public class PlayerPoint : MonoBehaviour
     {
 
         this.transform.position = new Vector3( //
-            ShipContentManager.instance.nowMapPoint.transform.position.x, //
-            ShipContentManager.instance.nowMapPoint.transform.position.y, //
+            ContentManager.instance.nowMapPoint.transform.position.x, //
+            ContentManager.instance.nowMapPoint.transform.position.y, //
             this.transform.position.z
             );
     }
